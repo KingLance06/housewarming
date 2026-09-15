@@ -17,13 +17,15 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
-    background: radial-gradient(circle at 50% 0%, #24314f 0%, #0f1a30 60%, #0a1224 100%);
+    background: linear-gradient(180deg, #2A1B32 0%, #5A2A3D 28%, #9C4A3C 55%, #D68A42 82%, #E8A94F 100%);
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     padding:40px 16px;
     font-family:'Work Sans', sans-serif;
+    position:relative;
+    overflow-x:hidden;
   }
   .card{
     width:100%;
@@ -133,9 +135,132 @@
     min-height:16px;
   }
   .toast.show{ opacity:1; }
+
+  .bg-particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+  }
+  .card{ position:relative; z-index:1; }
+
+  .particle{
+    position:absolute;
+    bottom:-40px;
+    left:var(--x);
+    opacity:0;
+    animation: floatUp var(--dur) linear var(--delay) infinite;
+  }
+  .particle.petal{
+    width:var(--size);
+    height:calc(var(--size) * 0.7);
+    background: linear-gradient(135deg, #E9A24B, #C9663B);
+    border-radius: 60% 40% 60% 40%;
+    box-shadow: 0 0 6px rgba(233,162,75,0.4);
+  }
+  .particle.spark{
+    width:var(--size);
+    height:var(--size);
+    border-radius:50%;
+    background: radial-gradient(circle, #F4D999 0%, rgba(244,217,153,0) 70%);
+  }
+
+  @keyframes floatUp{
+    0%{
+      transform: translate(0, 0) rotate(0deg);
+      opacity:0;
+    }
+    8%{ opacity:0.85; }
+    50%{
+      transform: translate(var(--drift), -55vh) rotate(180deg);
+    }
+    92%{ opacity:0.7; }
+    100%{
+      transform: translate(calc(var(--drift) * 1.6), -115vh) rotate(360deg);
+      opacity:0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .particle{ animation: none; display:none; }
+  }
+
+  .sky-glow{
+    position:fixed;
+    top:6%;
+    left:50%;
+    transform:translateX(-50%);
+    width:220px;height:220px;
+    border-radius:50%;
+    background: radial-gradient(circle, rgba(255,224,170,0.55) 0%, rgba(255,224,170,0) 70%);
+    z-index:0;
+    pointer-events:none;
+  }
+
+  .skyline{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:0;
+    pointer-events:none;
+    opacity:0.92;
+  }
 </style>
 </head>
 <body>
+  <div class="sky-glow"></div>
+  <div class="bg-particles" id="bgParticles"></div>
+
+  <svg class="skyline" viewBox="0 0 400 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="60" width="60" height="70" fill="#2A1B32"/>
+    <polygon points="0,60 30,35 60,60" fill="#2A1B32"/>
+    <rect x="14" y="78" width="12" height="14" fill="#F4D999" opacity="0.8"/>
+    <rect x="38" y="78" width="12" height="14" fill="#F4D999" opacity="0.5"/>
+
+    <rect x="55" y="80" width="50" height="50" fill="#331F30"/>
+    <polygon points="55,80 80,58 105,80" fill="#331F30"/>
+    <rect x="66" y="98" width="10" height="12" fill="#F4D999" opacity="0.7"/>
+    <rect x="86" y="98" width="10" height="12" fill="#F4D999" opacity="0.4"/>
+
+    <rect x="100" y="55" width="55" height="75" fill="#2A1B32"/>
+    <polygon points="100,55 127.5,28 155,55" fill="#2A1B32"/>
+    <rect x="112" y="75" width="11" height="13" fill="#F4D999" opacity="0.85"/>
+    <rect x="133" y="75" width="11" height="13" fill="#F4D999" opacity="0.5"/>
+    <rect x="112" y="98" width="11" height="13" fill="#F4D999" opacity="0.5"/>
+    <rect x="133" y="98" width="11" height="13" fill="#F4D999" opacity="0.8"/>
+
+    <rect x="150" y="85" width="48" height="45" fill="#331F30"/>
+    <polygon points="150,85 174,64 198,85" fill="#331F30"/>
+    <rect x="160" y="102" width="10" height="12" fill="#F4D999" opacity="0.6"/>
+    <rect x="180" y="102" width="10" height="12" fill="#F4D999" opacity="0.85"/>
+
+    <rect x="193" y="50" width="60" height="80" fill="#2A1B32"/>
+    <polygon points="193,50 223,22 253,50" fill="#2A1B32"/>
+    <rect x="205" y="70" width="12" height="14" fill="#F4D999" opacity="0.75"/>
+    <rect x="228" y="70" width="12" height="14" fill="#F4D999" opacity="0.5"/>
+    <rect x="205" y="95" width="12" height="14" fill="#F4D999" opacity="0.5"/>
+    <rect x="228" y="95" width="12" height="14" fill="#F4D999" opacity="0.85"/>
+
+    <rect x="248" y="82" width="50" height="48" fill="#331F30"/>
+    <polygon points="248,82 273,60 298,82" fill="#331F30"/>
+    <rect x="259" y="100" width="10" height="12" fill="#F4D999" opacity="0.5"/>
+    <rect x="279" y="100" width="10" height="12" fill="#F4D999" opacity="0.8"/>
+
+    <rect x="293" y="58" width="55" height="72" fill="#2A1B32"/>
+    <polygon points="293,58 320.5,32 348,58" fill="#2A1B32"/>
+    <rect x="304" y="78" width="11" height="13" fill="#F4D999" opacity="0.8"/>
+    <rect x="325" y="78" width="11" height="13" fill="#F4D999" opacity="0.45"/>
+    <rect x="304" y="100" width="11" height="13" fill="#F4D999" opacity="0.45"/>
+    <rect x="325" y="100" width="11" height="13" fill="#F4D999" opacity="0.8"/>
+
+    <rect x="343" y="86" width="57" height="44" fill="#331F30"/>
+    <polygon points="343,86 371.5,63 400,86" fill="#331F30"/>
+    <rect x="354" y="103" width="10" height="12" fill="#F4D999" opacity="0.7"/>
+    <rect x="378" y="103" width="10" height="12" fill="#F4D999" opacity="0.5"/>
+  </svg>
+
   <!--
     BACKGROUND MUSIC:
     Upload your own mp3 to this same GitHub repo (e.g. music.mp3) and it will
@@ -167,27 +292,58 @@
   </div>
 
   <script>
+    // Gently rising marigold petals + warm light sparks in the background
+    (function(){
+      const container = document.getElementById('bgParticles');
+      const total = 22;
+      for (let i = 0; i < total; i++){
+        const el = document.createElement('div');
+        const isPetal = Math.random() > 0.4;
+        el.className = 'particle ' + (isPetal ? 'petal' : 'spark');
+        const size = isPetal ? (10 + Math.random() * 10) : (3 + Math.random() * 5);
+        el.style.setProperty('--size', size + 'px');
+        el.style.setProperty('--x', Math.random() * 100 + 'vw');
+        el.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
+        el.style.setProperty('--dur', (10 + Math.random() * 10) + 's');
+        el.style.setProperty('--delay', (Math.random() * -20) + 's');
+        container.appendChild(el);
+      }
+    })();
+
     // Start the background music on the visitor's first tap/scroll —
     // phones block audio with sound from autoplaying until there's a gesture.
-    function armAutoStart(){
+    // IMPORTANT: keep retrying on every tap until play() actually succeeds —
+    // a single failed attempt should not give up permanently.
+    (function(){
       const music = document.getElementById('bgMusic');
-      let started = false;
-      const start = () => {
-        if (started) return;
-        started = true;
-        music.play().catch(()=>{ /* file missing or blocked, fail silently */ });
-        document.removeEventListener('click', start);
-        document.removeEventListener('touchstart', start);
-        document.removeEventListener('scroll', start);
-      };
-      document.addEventListener('click', start, { once:true });
-      document.addEventListener('touchstart', start, { once:true });
-      document.addEventListener('scroll', start, { once:true });
+      let playing = false;
 
-      // Some desktop browsers allow autoplay outright — try immediately too.
-      music.play().then(() => { started = true; }).catch(()=>{});
-    }
-    window.addEventListener('DOMContentLoaded', armAutoStart);
+      function attemptPlay(){
+        if (playing) return;
+        music.muted = false;
+        music.volume = 1;
+        const p = music.play();
+        if (p && typeof p.then === 'function'){
+          p.then(() => {
+            playing = true;
+          }).catch(() => {
+            // failed silently — leave listeners active so the next tap retries
+          });
+        } else {
+          playing = true;
+        }
+      }
+
+      ['click', 'touchend', 'touchstart', 'scroll', 'pointerdown'].forEach(evt => {
+        document.addEventListener(evt, attemptPlay, { passive: true });
+      });
+
+      // Try immediately too, in case the browser allows it outright
+      window.addEventListener('DOMContentLoaded', attemptPlay);
+
+      // Once actually playing, stop re-attempting
+      music.addEventListener('playing', () => { playing = true; });
+    })();
 
     function copyAddress(){
       const addr = "No. 20, Jalan Sungai Merbau 32/76C, Seksyen 32, Bukit Kemuning, 40460 Selangor, Malaysia";
