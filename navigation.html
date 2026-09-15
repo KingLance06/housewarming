@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Directions — Ganapathy Housewarming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#1B2A44;
+    --brass:#C9A15A;
+    --brass-light:#E4C88A;
+    --terracotta:#B5533C;
+    --ivory:#F4ECDC;
+    --ivory-dim:#E9DEC6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background: radial-gradient(circle at 50% 0%, #24314f 0%, #0f1a30 60%, #0a1224 100%);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 16px;
+    font-family:'Work Sans', sans-serif;
+  }
+  .card{
+    width:100%;
+    max-width:440px;
+    background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-dim) 100%);
+    border-radius:28px;
+    padding:44px 32px 38px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+    border:1px solid rgba(201,161,90,0.4);
+    text-align:center;
+  }
+  .pin{
+    width:52px;height:52px;
+    margin:0 auto 18px;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:50%;
+    background:var(--indigo);
+  }
+  .pin svg{width:26px;height:26px;}
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.12em;
+    color:var(--terracotta);
+    font-weight:600;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:32px;
+    color:var(--indigo);
+    margin-bottom:20px;
+    line-height:1.2;
+  }
+  .venue-name{
+    font-family:'Cormorant Garamond', serif;
+    font-size:19px;
+    font-weight:600;
+    color:var(--indigo);
+    margin-bottom:6px;
+  }
+  .venue-addr{
+    font-size:13.5px;
+    color:var(--indigo);
+    opacity:0.75;
+    line-height:1.6;
+    margin-bottom:28px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    padding:15px 20px;
+    background: var(--terracotta);
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.02em;
+    box-shadow: 0 8px 20px rgba(181,83,60,0.35);
+    transition: transform 0.15s ease;
+    margin-bottom:12px;
+  }
+  .btn:active{ transform: scale(0.98); }
+  .btn svg{ width:18px;height:18px; }
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    padding:13px 20px;
+    background: transparent;
+    color:var(--indigo);
+    border:1.4px solid var(--brass);
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:500;
+    font-size:14px;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .divider{
+    display:flex;align-items:center;gap:10px;
+    margin: 22px 0 16px;
+  }
+  .divider .line{ height:1px; flex:1; background:var(--brass); opacity:0.5; }
+  .divider span{ font-size:11px; letter-spacing:0.1em; color:var(--indigo); opacity:0.6; }
+  .footer{
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--indigo);
+    opacity:0.55;
+    margin-top:6px;
+  }
+  .toast{
+    margin-top:10px;
+    font-size:12px;
+    color:var(--terracotta);
+    opacity:0;
+    transition:opacity 0.25s ease;
+    min-height:16px;
+  }
+  .toast.show{ opacity:1; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="pin">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.36 15.64 2 12 2C8.36 2 5 5.36 5 9.5C5 14.6 12 21 12 21Z" stroke="#E4C88A" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.6" stroke="#E4C88A" stroke-width="1.5"/></svg>
+    </div>
+    <div class="eyebrow">Find your way to</div>
+    <h1>Our New Home</h1>
+
+    <div class="venue-name">No. 20, Jalan Sungai Merbau 32/76C</div>
+    <div class="venue-addr">Seksyen 32, Bukit Kemuning<br>40460, Selangor, Malaysia</div>
+
+    <a class="btn" id="directionsBtn" href="https://www.google.com/maps/search/?api=1&query=No.20%2C%20Jalan%20Sungai%20Merbau%2032%2F76C%2C%20Seksyen%2032%2C%20Bukit%20Kemuning%2C%2040460%20Selangor%2C%20Malaysia" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      Get Directions
+    </a>
+    <button class="btn-secondary" onclick="copyAddress()">Copy Address</button>
+    <div class="toast" id="toast">Address copied</div>
+
+    <div class="divider"><span class="line"></span><span>housewarming celebration</span><span class="line"></span></div>
+    <div class="footer">Ganapathy &amp; Family</div>
+  </div>
+
+  <script>
+    function copyAddress(){
+      const addr = "No. 20, Jalan Sungai Merbau 32/76C, Seksyen 32, Bukit Kemuning, 40460 Selangor, Malaysia";
+      navigator.clipboard.writeText(addr).then(() => {
+        const t = document.getElementById('toast');
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 1800);
+      });
+    }
+  </script>
+</body>
+</html>
