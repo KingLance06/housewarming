@@ -111,7 +111,7 @@ h1.event {
     font-size: clamp(11px, 1.65vw, 13.5px);
     color: #4a2c16;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 11px;
 }
 
 /* Invitation message */
@@ -122,40 +122,34 @@ h1.event {
     font-size: clamp(14px, 2.05vw, 17px);
     color: #211710;
     line-height: 1.32;
-    margin-bottom: 14px;
+    margin-bottom: 11px;
     padding: 0 8px;
 }
 
-/* Side-by-side Date and Time layout with icons */
+/* Side-by-side Date and Time layout */
 .details {
     display: flex;
     justify-content: center;
-    gap: 36px;
-    margin-bottom: 14px;
+    gap: 44px;
+    margin-bottom: 11px;
 }
 
 .detail {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    text-align: left;
+    width: 130px;
+    text-align: center;
 }
 
-.icon-circle {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #edd2a8;
+.label-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1px;
+    gap: 5px;
+    margin-bottom: 3px;
 }
 
-.icon-circle svg {
-    width: 50%;
-    height: 50%;
+.label-row svg {
+    width: 13px;
+    height: 13px;
     color: #8b1e16;
 }
 
@@ -165,29 +159,22 @@ h1.event {
     letter-spacing: 0.1em;
     color: #8b1e16;
     font-weight: 700;
-    margin-bottom: 2px;
 }
 
 .detail .value {
-    font-size: clamp(12px, 1.6vw, 13.5px);
+    font-size: clamp(12.5px, 1.7vw, 14px);
     color: #17110d;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
-/* Venue and address block with icon matching reference layout */
+/* Venue and address block */
 .venue-block {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    width: fit-content;
-    max-width: 95%;
-    margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
-.venue-block .venue-content {
-    flex-grow: 1;
+.venue-block .label-row {
+    margin-bottom: 2px;
 }
 
 .venue-block .name {
@@ -196,7 +183,7 @@ h1.event {
     font-weight: 700;
     color: #291309;
     line-height: 1.25;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .venue-block .addr {
@@ -234,7 +221,7 @@ h1.event {
 }
 
 @media (max-width: 480px) {
-    .details { gap: 16px; }
+    .details { gap: 20px; }
 }
 
 </style>
@@ -274,51 +261,44 @@ h1.event {
             our new beginning.
         </p>
 
-        <!-- Side-by-Side Date & Time with Icons -->
+        <!-- Side-by-Side Date & Time -->
         <div class="details">
             <div class="detail">
-                <div class="icon-circle">
+                <div class="label-row">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h3v3H7v-3zm4 0h3v3h-3v-3zm4 0h3v3h-3v-3zm-8 4h3v3H7v-3zm4 0h3v3h-3v-3z"/>
                     </svg>
+                    <span class="label">DATE</span>
                 </div>
-                <div>
-                    <div class="label">DATE</div>
-                    <div class="value">13 December<br>2026</div>
-                </div>
+                <div class="value">13 December<br>2026</div>
             </div>
 
             <div class="detail">
-                <div class="icon-circle">
+                <div class="label-row">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="9"/>
                         <polyline points="12 7 12 12 15.5 14"/>
                     </svg>
+                    <span class="label">TIME</span>
                 </div>
-                <div>
-                    <div class="label">TIME</div>
-                    <div class="value">9.00 AM –<br>11.00 AM</div>
-                </div>
+                <div class="value">9.00 AM –<br>11.00 AM</div>
             </div>
         </div>
 
-        <!-- Venue with Icon matching exact layout -->
+        <!-- Venue -->
         <div class="venue-block">
-            <div class="icon-circle">
+            <div class="label-row">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
                 </svg>
+                <span class="label">VENUE</span>
             </div>
-            <div class="venue-content">
-                <div class="label">VENUE</div>
-                <div class="name">
-                    No. 20, Jalan Sungai Merbau 32/76C<br>
-                    Kelab Golf &amp; Resort
-                </div>
-                <div class="addr">
-                    Bukit Kemuning, Seksyen 32, Shah Alam<br>
-                    Selangor, 40460
-                </div>
+            <div class="name">
+                No. 20, Jalan Sungai Merbau 32/76C Kelab Golf &amp; Resort
+            </div>
+            <div class="addr">
+                Bukit Kemuning, Seksyen 32, Shah Alam<br>
+                Selangor, 40460
             </div>
         </div>
     </div>
@@ -341,4 +321,3 @@ h1.event {
 
 </body>
 </html>
-```[cite: 7]
