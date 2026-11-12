@@ -37,43 +37,43 @@ body {
 
 .zone {
     position: absolute;
-    left: 10%;
-    width: 80%;
+    left: 9%;
+    width: 82%;
     text-align: center;
 }
 
-/* 1. Title block below Ganesha (Ganesha ends around 20%) */
+/* 1. Title block below Ganesha */
 .zone-a {
-    top: 22.5%;
+    top: 22.0%;
 }
 
-/* 2. Intro line right ABOVE the first lotus divider (lotus is at ~37.5%) */
+/* 2. Intro line right ABOVE the first lotus divider */
 .zone-intro {
-    top: 31.8%;
+    top: 32.0%;
 }
 
-/* 3. Main body BELOW the first lotus divider */
+/* 3. Main body BELOW the first lotus divider — stretched evenly to fill the gap down to ~76% */
 .zone-b {
-    top: 40.5%;
+    top: 40.2%;
 }
 
-/* 4. Closing line BELOW the second lotus divider (lotus is at ~78%) */
+/* 4. Closing line BELOW the second lotus divider */
 .zone-c {
-    top: 80.3%;
+    top: 80.1%;
 }
 
-/* 5. Hashtags & footer BELOW the third lotus divider (lotus is at ~85%) */
+/* 5. Hashtags & footer BELOW the third lotus divider */
 .zone-d {
-    top: 87.2%;
+    top: 87.0%;
 }
 
 /* Introductory text */
 .eyebrow {
-    font-size: clamp(12px, 1.8vw, 15px);
+    font-size: clamp(13px, 2vw, 17px);
     font-weight: 600;
     color: #382015;
     letter-spacing: 0.04em;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 /* Main heading */
@@ -81,9 +81,9 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     color: #8b1e16;
-    font-size: clamp(28px, 5vw, 40px);
+    font-size: clamp(31px, 5.4vw, 44px);
     line-height: 1.05;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     text-shadow: 0 1px 0 rgba(255,255,255,0.7);
 }
 
@@ -92,101 +92,106 @@ h1.event {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 9px;
 }
 
 .divider .line {
     height: 1px;
-    width: 34px;
+    width: 38px;
     background: #8c6d3f;
 }
 
 .divider span {
     color: #8b1e16;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 /* Family introduction */
 .of {
-    font-size: clamp(9.5px, 1.45vw, 11.5px);
+    font-size: clamp(10.5px, 1.6vw, 13px);
     color: #2b180e;
     font-weight: 700;
     letter-spacing: 0.06em;
 }
 
-/* Family names */
+/* Family names — larger for easy reading */
 .family-name {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     color: #291309;
-    font-size: clamp(20px, 3.5vw, 27px);
-    line-height: 1.18;
-    margin-bottom: 5px;
+    font-size: clamp(23px, 4vw, 31px);
+    line-height: 1.2;
+    margin-bottom: 7px;
     text-shadow: 0 1px 0 rgba(255,255,255,0.65);
 }
 
 .family-sub {
-    font-size: clamp(10.5px, 1.5vw, 12px);
+    font-size: clamp(11.5px, 1.75vw, 14px);
     color: #4a2c16;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
-/* Invitation message */
+/* Invitation message — bigger & more breathing room */
 .message {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(13px, 1.9vw, 15.5px);
+    font-size: clamp(15px, 2.25vw, 18.5px);
     color: #211710;
-    line-height: 1.28;
-    margin-bottom: 12px;
-    padding: 0 8px;
+    line-height: 1.38;
+    margin-bottom: 20px;
+    padding: 0 6px;
 }
 
 /* Date and time */
 .details {
     display: flex;
     justify-content: center;
-    gap: 44px;
-    margin-bottom: 12px;
+    gap: 48px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(140, 109, 63, 0.35);
+    width: 76%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .detail {
-    width: 115px;
+    width: 135px;
 }
 
 .detail .label,
 .venue-block .label {
-    font-size: clamp(9.5px, 1.35vw, 11px);
-    letter-spacing: 0.08em;
+    font-size: clamp(10.5px, 1.55vw, 12.5px);
+    letter-spacing: 0.1em;
     color: #8b1e16;
     font-weight: 700;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .detail .value {
-    font-size: clamp(12px, 1.65vw, 13.5px);
+    font-size: clamp(14px, 2vw, 16.5px);
     color: #17110d;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
-/* Venue and address */
+/* Venue and address — bigger & clearer */
 .venue-block .name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(14px, 2.2vw, 17px);
+    font-size: clamp(16.5px, 2.6vw, 21px);
     font-weight: 700;
     color: #291309;
-    line-height: 1.22;
-    margin-bottom: 3px;
+    line-height: 1.25;
+    margin-bottom: 5px;
 }
 
 .venue-block .addr {
-    font-size: clamp(11px, 1.5vw, 12.5px);
+    font-size: clamp(12.5px, 1.85vw, 15px);
     color: #17110d;
     font-weight: 700;
-    line-height: 1.32;
+    line-height: 1.4;
 }
 
 /* Closing invitation */
@@ -194,30 +199,37 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(13.5px, 2vw, 16.5px);
+    font-size: clamp(15px, 2.2vw, 18.5px);
     color: #2b180e;
-    line-height: 1.22;
+    line-height: 1.24;
 }
 
 /* Hashtags */
 .hashtags {
-    font-size: clamp(9px, 1.3vw, 10.5px);
+    font-size: clamp(10px, 1.5vw, 12px);
     color: #382015;
     font-weight: 600;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
 /* Footer */
 .footer {
-    font-size: clamp(8.5px, 1.2vw, 9.5px);
-    letter-spacing: 0.08em;
+    font-size: clamp(9.5px, 1.35vw, 11px);
+    letter-spacing: 0.09em;
     text-transform: uppercase;
     color: #291309;
     font-weight: 700;
 }
 
 @media (max-width: 480px) {
-    .details { gap: 20px; }
+    .details {
+        gap: 20px;
+        width: 88%;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    .family-sub { margin-bottom: 12px; }
+    .message { margin-bottom: 13px; }
 }
 
 </style>
@@ -271,7 +283,8 @@ h1.event {
         <div class="venue-block">
             <div class="label">VENUE</div>
             <div class="name">
-                No. 20, Jalan Sungai Merbau 32/76C Kelab Golf &amp; Resort
+                No. 20, Jalan Sungai Merbau 32/76C<br>
+                Kelab Golf &amp; Resort
             </div>
             <div class="addr">
                 Bukit Kemuning, Seksyen 32, Shah Alam<br>
