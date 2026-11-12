@@ -22,7 +22,7 @@ body {
     background: #f8eee8;
 }
 
-/* Main invitation background */
+/* Main invitation background container */
 .page {
     position: relative;
     width: 100%;
@@ -36,24 +36,40 @@ body {
     overflow: hidden;
 }
 
+/* Positioning zones aligned precisely between the artwork's embedded dividers */
 .zone {
     position: absolute;
-    left: 9%;
-    width: 82%;
+    left: 10%;
+    width: 80%;
     text-align: center;
 }
 
-.zone-a { top: 19.0%; }
-.zone-b { top: 38.5%; }
-.zone-c { top: 78.5%; }
-.zone-d { top: 85.0%; }
+/* Zone A: Top header (Ganesha & Title) */
+.zone-a { 
+    top: 15.5%; 
+}
+
+/* Zone B: Main content (Family, Message, Date, Time, Venue) sitting above the middle lotus divider */
+.zone-b { 
+    top: 39.5%; 
+}
+
+/* Zone C: Closing message sitting between the two bottom lotus dividers */
+.zone-c { 
+    top: 79.2%; 
+}
+
+/* Zone D: Footer hashtags and family sign-off at the very bottom */
+.zone-d { 
+    top: 86.5%; 
+}
 
 /* Introductory text */
 .eyebrow {
-    font-size: clamp(12px, 1.8vw, 15px);
+    font-size: clamp(11px, 1.7vw, 14px);
     font-weight: 600;
     color: #382015;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     margin-bottom: 2px;
 }
 
@@ -62,39 +78,18 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     color: #a52119;
-    font-size: clamp(28px, 4.8vw, 38px);
+    font-size: clamp(26px, 4.5vw, 36px);
     line-height: 1.05;
-    margin-bottom: 6px;
     text-shadow: 0 1px 0 rgba(255,255,255,0.7);
-}
-
-/* Decorative divider */
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 4px;
-}
-
-.divider .line {
-    height: 1px;
-    width: 32px;
-    background: #b88625;
-}
-
-.divider span {
-    color: #a52119;
-    font-size: 12px;
 }
 
 /* Family introduction */
 .of {
-    font-size: clamp(9.5px, 1.5vw, 11px);
+    font-size: clamp(9px, 1.4vw, 10.5px);
     color: #392016;
     font-weight: 700;
     letter-spacing: 0.08em;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 /* Family names */
@@ -102,17 +97,17 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     color: #291309;
-    font-size: clamp(20px, 3.4vw, 26px);
-    line-height: 1.2;
+    font-size: clamp(19px, 3.2vw, 25px);
+    line-height: 1.15;
     margin-bottom: 4px;
     text-shadow: 0 1px 0 rgba(255,255,255,0.65);
 }
 
 .family-sub {
-    font-size: clamp(10.5px, 1.5vw, 12px);
+    font-size: clamp(10px, 1.4vw, 11.5px);
     color: #68401f;
     font-weight: 600;
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 }
 
 /* Invitation message */
@@ -120,28 +115,28 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(13px, 1.8vw, 15px);
+    font-size: clamp(12.5px, 1.7vw, 14.5px);
     color: #211710;
-    line-height: 1.3;
-    margin-bottom: 10px;
-    padding: 0 10px;
+    line-height: 1.25;
+    margin-bottom: 9px;
+    padding: 0 5px;
 }
 
-/* Date and time */
+/* Date and time grid layout */
 .details {
     display: flex;
     justify-content: center;
     gap: 36px;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 
 .detail {
-    width: 120px;
+    width: 110px;
 }
 
 .detail .label,
 .venue-block .label {
-    font-size: clamp(9.5px, 1.3vw, 11px);
+    font-size: clamp(9px, 1.2vw, 10.5px);
     letter-spacing: 0.1em;
     color: #9e2418;
     font-weight: 700;
@@ -149,31 +144,31 @@ h1.event {
 }
 
 .detail .value {
-    font-size: clamp(12px, 1.6vw, 13.5px);
+    font-size: clamp(11.5px, 1.5vw, 13px);
     color: #17110d;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.2;
 }
 
-/* Venue and address */
+/* Venue and address block */
 .venue-block {
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .venue-block .name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(14px, 2.2vw, 17px);
+    font-size: clamp(13px, 2vw, 15.5px);
     font-weight: 700;
     color: #291309;
-    line-height: 1.25;
+    line-height: 1.2;
     margin-bottom: 2px;
 }
 
 .venue-block .addr {
-    font-size: clamp(11px, 1.5vw, 12.5px);
+    font-size: clamp(10.5px, 1.4vw, 12px);
     color: #17110d;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.3;
 }
 
 /* Closing invitation */
@@ -181,35 +176,35 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(14px, 2vw, 16.5px);
+    font-size: clamp(13px, 1.8vw, 15px);
     color: #a52119;
-    line-height: 1.25;
+    line-height: 1.2;
 }
 
 /* Hashtags */
 .hashtags {
-    font-size: clamp(8.5px, 1.2vw, 10px);
+    font-size: clamp(8px, 1.1vw, 9.5px);
     color: #51321d;
     font-weight: 600;
-    margin-bottom: 4px;
-    word-spacing: 1px;
+    margin-bottom: 3px;
+    word-spacing: 0.5px;
 }
 
 /* Footer */
 .footer {
-    font-size: clamp(8px, 1.1vw, 9px);
+    font-size: clamp(7.5px, 1vw, 8.5px);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #382015;
     font-weight: 700;
 }
 
-/* Mobile responsive design */
+/* Mobile responsive adjustments */
 @media (max-width: 480px) {
-    .zone-a { top: 18.5%; }
-    .zone-b { top: 37.5%; }
-    .zone-c { top: 78%; }
-    .zone-d { top: 85%; }
+    .zone-a { top: 15%; }
+    .zone-b { top: 38.5%; }
+    .zone-c { top: 78.5%; }
+    .zone-d { top: 86%; }
 }
 
 </style>
@@ -219,16 +214,13 @@ h1.event {
 
 <div class="page">
 
+    <!-- Zone A: Title Header -->
     <div class="zone zone-a">
         <div class="eyebrow">You are cordially invited to a</div>
         <h1 class="event">Housewarming Ceremony</h1>
-        <div class="divider">
-            <span class="line"></span>
-            <span>✧</span>
-            <span class="line"></span>
-        </div>
     </div>
 
+    <!-- Zone B: Family details, message, date/time & venue -->
     <div class="zone zone-b">
         <div class="of">CELEBRATING A NEW BEGINNING AT THE HOME OF</div>
         <div class="family-name">
@@ -266,6 +258,7 @@ h1.event {
         </div>
     </div>
 
+    <!-- Zone C: Closing text -->
     <div class="zone zone-c">
         <p class="closing">
             We look forward to celebrating<br>
@@ -273,6 +266,7 @@ h1.event {
         </p>
     </div>
 
+    <!-- Zone D: Hashtags & Footer -->
     <div class="zone zone-d">
         <div class="hashtags">#GanapathyGrihaPravesam &nbsp;·&nbsp; #NewHomeNewBeginnings</div>
         <div class="footer">With Love, The Ganapathy Family</div>
@@ -282,3 +276,4 @@ h1.event {
 
 </body>
 </html>
+```[cite: 2]
