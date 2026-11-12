@@ -278,9 +278,9 @@
     <h1>Our New Home</h1>
 
     <div class="venue-name">No. 20, Jalan Sungai Merbau 32/76C</div>
-    <div class="venue-addr">Seksyen 32, Bukit Kemuning<br>40460, Selangor, Malaysia</div>
+    <div class="venue-addr">Kelab Golf &amp; Resort Bukit Kemuning<br>Seksyen 32, Shah Alam<br>40460, Selangor, Malaysia</div>
 
-    <a class="btn" id="directionsBtn" href="https://www.google.com/maps/search/?api=1&query=No.20%2C%20Jalan%20Sungai%20Merbau%2032%2F76C%2C%20Seksyen%2032%2C%20Bukit%20Kemuning%2C%2040460%20Selangor%2C%20Malaysia" target="_blank" rel="noopener">
+    <a class="btn" id="directionsBtn" href="https://www.google.com/maps/search/?api=1&query=2.979861,101.529667" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none"><path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       Get Directions
     </a>
@@ -288,7 +288,7 @@
     <div class="toast" id="toast">Address copied</div>
 
     <div class="divider"><span class="line"></span><span>housewarming celebration</span><span class="line"></span></div>
-    <div class="footer">Ganapathy &amp; Family</div>
+    <div class="footer">Ganapathy, Hemavilashini &amp; Madhanavilashan</div>
   </div>
 
   <script>
@@ -346,7 +346,7 @@
     })();
 
     function copyAddress(){
-      const addr = "No. 20, Jalan Sungai Merbau 32/76C, Seksyen 32, Bukit Kemuning, 40460 Selangor, Malaysia";
+      const addr = "No. 20, Jalan Sungai Merbau 32/76C, Kelab Golf & Resort Bukit Kemuning, Seksyen 32, Shah Alam, 40460 Selangor, Malaysia";
       navigator.clipboard.writeText(addr).then(() => {
         const t = document.getElementById('toast');
         t.classList.add('show');
