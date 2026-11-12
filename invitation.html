@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,286 +12,286 @@
 
 <style>
 
-- {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: 'Work Sans', sans-serif;
-    background: #f8eee8;
+    font-family: 'Work Sans', sans-serif;
+    background: #f8eee8;
 }
 
 /* Main invitation background */
 
 .page {
-    position: relative;
-    width: 100%;
-    max-width: 734px;
-    aspect-ratio: 734 / 1305;
-    margin: auto;
-    background-image: url('template-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 734px;
+    aspect-ratio: 734 / 1305;
+    margin: auto;
+    background-image: url('template-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    overflow: hidden;
 }
 
 /* Main content positioning */
 
 .text-wrap {
-    position: absolute;
-    top: 29.8%;
-    left: 7%;
-    width: 86%;
-    text-align: center;
+    position: absolute;
+    top: 29.8%;
+    left: 7%;
+    width: 86%;
+    text-align: center;
 }
 
 /* Introductory text */
 
 .eyebrow {
-    font-size: clamp(14px, 2.2vw, 17px);
-    font-weight: 600;
-    color: #382015;
-    letter-spacing: 0.06em;
-    margin-bottom: 7px;
+    font-size: clamp(14px, 2.2vw, 17px);
+    font-weight: 600;
+    color: #382015;
+    letter-spacing: 0.06em;
+    margin-bottom: 7px;
 }
 
 /* Main heading */
 
 h1.event {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    color: #a52119;
-    font-size: clamp(38px, 6.5vw, 52px);
-    line-height: 1.05;
-    margin-bottom: 10px;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: #a52119;
+    font-size: clamp(38px, 6.5vw, 52px);
+    line-height: 1.05;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
 }
 
 /* Decorative divider */
 
 .divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
 }
 
 .divider .line {
-    height: 1.5px;
-    width: 48px;
-    background: #b88625;
+    height: 1.5px;
+    width: 48px;
+    background: #b88625;
 }
 
 .divider span {
-    color: #a52119;
-    font-size: 16px;
+    color: #a52119;
+    font-size: 16px;
 }
 
 /* Family introduction */
 
 .of {
-    font-size: clamp(11px, 1.8vw, 14px);
-    color: #392016;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 9px;
+    font-size: clamp(11px, 1.8vw, 14px);
+    color: #392016;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 9px;
 }
 
 /* Family names */
 
 .family-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    color: #291309;
-    font-size: clamp(27px, 4.5vw, 34px);
-    line-height: 1.15;
-    margin-bottom: 7px;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.65);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: #291309;
+    font-size: clamp(27px, 4.5vw, 34px);
+    line-height: 1.15;
+    margin-bottom: 7px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.65);
 }
 
 .family-sub {
-    font-size: clamp(12px, 1.8vw, 14px);
-    color: #68401f;
-    font-weight: 600;
-    margin-bottom: 19px;
+    font-size: clamp(12px, 1.8vw, 14px);
+    color: #68401f;
+    font-weight: 600;
+    margin-bottom: 19px;
 }
 
 /* Invitation message */
 
 .message {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: clamp(19px, 2.8vw, 22px);
-    color: #211710;
-    line-height: 1.35;
-    margin-bottom: 15px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(19px, 2.8vw, 22px);
+    color: #211710;
+    line-height: 1.35;
+    margin-bottom: 15px;
 }
 
 /* Date and time */
 
 .details {
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 20px;
 }
 
 .detail {
-    width: 125px;
+    width: 125px;
 }
 
 .detail .label,
 .venue-block .label {
-    font-size: clamp(12px, 1.7vw, 14px);
-    letter-spacing: 0.1em;
-    color: #9e2418;
-    font-weight: 700;
-    margin-bottom: 5px;
+    font-size: clamp(12px, 1.7vw, 14px);
+    letter-spacing: 0.1em;
+    color: #9e2418;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .detail .value {
-    font-size: clamp(16px, 2.2vw, 18px);
-    color: #17110d;
-    font-weight: 700;
-    line-height: 1.4;
+    font-size: clamp(16px, 2.2vw, 18px);
+    color: #17110d;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 /* Venue and address */
 
 .venue-block {
-    margin-bottom: 19px;
+    margin-bottom: 19px;
 }
 
 .venue-block .name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(21px, 3.2vw, 25px);
-    font-weight: 700;
-    color: #291309;
-    line-height: 1.2;
-    margin-bottom: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(21px, 3.2vw, 25px);
+    font-weight: 700;
+    color: #291309;
+    line-height: 1.2;
+    margin-bottom: 6px;
 }
 
 .venue-block .addr {
-    font-size: clamp(15px, 2.1vw, 17px);
-    color: #17110d;
-    font-weight: 700;
-    line-height: 1.5;
+    font-size: clamp(15px, 2.1vw, 17px);
+    color: #17110d;
+    font-weight: 700;
+    line-height: 1.5;
 }
 
 /* Closing invitation */
 
 .rsvp-line {
-    font-size: clamp(15px, 2vw, 17px);
-    color: #211710;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 13px;
+    font-size: clamp(15px, 2vw, 17px);
+    color: #211710;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 13px;
 }
 
 .closing {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: clamp(21px, 3vw, 24px);
-    color: #a52119;
-    margin-bottom: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(21px, 3vw, 24px);
+    color: #a52119;
+    margin-bottom: 12px;
 }
 
 /* Hashtags */
 
 .hashtags {
-    font-size: clamp(10px, 1.5vw, 12px);
-    color: #51321d;
-    font-weight: 600;
-    margin-bottom: 9px;
+    font-size: clamp(10px, 1.5vw, 12px);
+    color: #51321d;
+    font-weight: 600;
+    margin-bottom: 9px;
 }
 
 /* Footer */
 
 .footer {
-    font-size: clamp(10px, 1.4vw, 11px);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #382015;
-    font-weight: 700;
+    font-size: clamp(10px, 1.4vw, 11px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #382015;
+    font-weight: 700;
 }
 
 /* Mobile responsive design */
 
 @media (max-width: 480px) {
 
-    .text-wrap {
-        top: 29.5%;
-        left: 5%;
-        width: 90%;
-    }
+    .text-wrap {
+        top: 29.5%;
+        left: 5%;
+        width: 90%;
+    }
 
-    .eyebrow {
-        font-size: 12px;
-    }
+    .eyebrow {
+        font-size: 12px;
+    }
 
-    h1.event {
-        font-size: clamp(28px, 7vw, 35px);
-    }
+    h1.event {
+        font-size: clamp(28px, 7vw, 35px);
+    }
 
-    .family-name {
-        font-size: clamp(23px, 5.5vw, 27px);
-    }
+    .family-name {
+        font-size: clamp(23px, 5.5vw, 27px);
+    }
 
-    .family-sub {
-        font-size: 11px;
-        margin-bottom: 12px;
-    }
+    .family-sub {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
 
-    .message {
-        font-size: 16px;
-        margin-bottom: 13px;
-    }
+    .message {
+        font-size: 16px;
+        margin-bottom: 13px;
+    }
 
-    .details {
-        gap: 18px;
-        margin-bottom: 14px;
-    }
+    .details {
+        gap: 18px;
+        margin-bottom: 14px;
+    }
 
-    .detail .label {
-        font-size: 11px;
-    }
+    .detail .label {
+        font-size: 11px;
+    }
 
-    .detail .value {
-        font-size: 14px;
-    }
+    .detail .value {
+        font-size: 14px;
+    }
 
-    .venue-block {
-        margin-bottom: 13px;
-    }
+    .venue-block {
+        margin-bottom: 13px;
+    }
 
-    .venue-block .name {
-        font-size: 18px;
-    }
+    .venue-block .name {
+        font-size: 18px;
+    }
 
-    .venue-block .addr {
-        font-size: 13px;
-        font-weight: 700;
-    }
+    .venue-block .addr {
+        font-size: 13px;
+        font-weight: 700;
+    }
 
-    .rsvp-line {
-        font-size: 12px;
-        margin-bottom: 10px;
-    }
+    .rsvp-line {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
 
-    .closing {
-        font-size: 18px;
-    }
+    .closing {
+        font-size: 18px;
+    }
 
-    .hashtags,
-    .footer {
-        font-size: 9px;
-    }
+    .hashtags,
+    .footer {
+        font-size: 9px;
+    }
 }
 
 </style>
@@ -300,91 +301,97 @@ h1.event {
 
 <div class="page">
 
-    <div class="text-wrap">
+    <div class="text-wrap">
 
-        <div class="eyebrow">
-            You are cordially invited to a
-        </div>
+        <div class="eyebrow">
+            You are cordially invited to a
+        </div>
 
-        <h1 class="event">
-            Housewarming Ceremony
-        </h1>
+        <h1 class="event">
+            Housewarming Ceremony
+        </h1>
 
-        <div class="divider">
-            <span class="line"></span>
-            <span>✧</span>
-            <span class="line"></span>
-        </div>
+        <div class="divider">
+            <span class="line"></span>
+            <span>✧</span>
+            <span class="line"></span>
+        </div>
 
-        <div class="of">
-            CELEBRATING A NEW BEGINNING AT THE HOME OF
-        </div>
+        <div class="of">
+            CELEBRATING A NEW BEGINNING AT THE HOME OF
+        </div>
 
-        <div class="family-name">
-            Ganapathy, Parameswary, <br>
-            Hemavilashini &amp; Madhanavilashan
-        </div>
+        <div class="family-name">
+            Ganapathy, Parameswary,
+            Hemavilashini &amp; Madhanavilashan
+        </div>
 
-        <div class="family-sub">
-            Griha Pravesam · A New Chapter Begins
-        </div>
+        <div class="family-sub">
+            Griha Pravesam · A New Chapter Begins
+        </div>
 
-        <p class="message">
-            A house is made of bricks and beams,
-            but a home is built with love, blessings
-            and cherished memories. We invite you
-            to share in the joy of our new beginning.
-        </p>
+        <p class="message">
+            A house is made of bricks and beams,
+            but a home is built with love, blessings
+            and cherished memories. We invite you
+            to share in the joy of our new beginning.
+        </p>
 
-        <div class="details">
+        <div class="details">
 
-            <div class="detail">
-                <div class="label">DATE</div>
-                <div class="value">
-                    13 December<br>2026
-                </div>
-            </div>
+            <div class="detail">
+                <div class="label">DATE</div>
+                <div class="value">
+                    13 December<br>2026
+                </div>
+            </div>
 
-            <div class="detail">
-                <div class="label">TIME</div>
-                <div class="value">
-                    9:00 a.m.<br>- 12:00 p.m.
-                </div>
-            </div>
+            <div class="detail">
+                <div class="label">TIME</div>
+                <div class="value">
+                    To Be<br>Announced
+                </div>
+            </div>
 
-        </div>
+        </div>
 
-        <div class="venue-block">
+        <div class="venue-block">
 
-            <div class="label">VENUE</div>
+            <div class="label">VENUE</div>
 
-            <div class="name">
-                No. 20, Jalan Sungai Merbau 32/76C
-                Kelab Golf &amp; Resort
-            </div>
+            <div class="name">
+                No. 20, Jalan Sungai Merbau 32/76C
+                Kelab Golf &amp; Resort
+            </div>
 
-            <div class="addr">
-                Bukit Kemuning, Seksyen 32, Shah Alam<br>
-                Selangor, 40460
-            </div>
+            <div class="addr">
+                Bukit Kemuning, Seksyen 32, Shah Alam<br>
+                Selangor, 40460
+            </div>
 
-        </div>
+        </div>
 
-        <p class="closing">
-            We look forward to celebrating<br>
-            this special occasion with you!
-        </p>
+        <p class="rsvp-line">
+            Your presence and blessings would mean<br>
+            the world to us as we embark on this<br>
+            beautiful new chapter of our lives.
+        </p>
 
-        <div class="hashtags">
-            #GanapathyGrihaPravesam ·
-            #NewHomeNewBeginnings
-        </div>
+        <p class="closing">
+            We look forward to celebrating<br>
+            this special occasion with you!
+        </p>
 
-        <div class="footer">
-            With Love, The Ganapathy Family
-        </div>
+        <div class="hashtags">
+            #GanapathyGrihaPravesam ·
+            #NewHomeNewBeginnings
+        </div>
 
-    </div>
+        <div class="footer">
+            With Love, The Ganapathy Family
+        </div>
+
+    </div>
 
 </div>
 
