@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +28,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 734px;
-    aspect-ratio: 734 / 1305;
+    aspect-ratio: 842 / 1264;
     margin: auto;
     background-image: url('template-bg.jpg');
     background-repeat: no-repeat;
@@ -38,24 +37,31 @@ body {
     overflow: hidden;
 }
 
-/* Main content positioning */
+/* The template already has its own decorative lotus dividers baked
+   into the artwork at roughly 38%, 78% and 84% of the height — each
+   text zone below is positioned to flow between them, instead of
+   drawing new dividers that would collide with the artwork's own. */
 
-.text-wrap {
+.zone {
     position: absolute;
-    top: 29.8%;
-    left: 7%;
-    width: 86%;
+    left: 9%;
+    width: 82%;
     text-align: center;
 }
+
+.zone-a { top: 19.5%; }
+.zone-b { top: 39.5%; }
+.zone-c { top: 79.8%; }
+.zone-d { top: 85.8%; }
 
 /* Introductory text */
 
 .eyebrow {
-    font-size: clamp(14px, 2.2vw, 17px);
+    font-size: clamp(13px, 2vw, 16px);
     font-weight: 600;
     color: #382015;
     letter-spacing: 0.06em;
-    margin-bottom: 7px;
+    margin-bottom: 4px;
 }
 
 /* Main heading */
@@ -64,9 +70,9 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     color: #a52119;
-    font-size: clamp(38px, 6.5vw, 52px);
+    font-size: clamp(30px, 5.2vw, 42px);
     line-height: 1.05;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-shadow: 0 1px 0 rgba(255,255,255,0.7);
 }
 
@@ -76,29 +82,27 @@ h1.event {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 16px;
+    gap: 9px;
 }
 
 .divider .line {
     height: 1.5px;
-    width: 48px;
+    width: 38px;
     background: #b88625;
 }
 
 .divider span {
     color: #a52119;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* Family introduction */
 
 .of {
-    font-size: clamp(11px, 1.8vw, 14px);
+    font-size: clamp(10px, 1.6vw, 12px);
     color: #392016;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 9px;
+    letter-spacing: 0.07em;
 }
 
 /* Family names */
@@ -107,17 +111,17 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     color: #291309;
-    font-size: clamp(27px, 4.5vw, 34px);
+    font-size: clamp(21px, 3.6vw, 27px);
     line-height: 1.15;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
     text-shadow: 0 1px 0 rgba(255,255,255,0.65);
 }
 
 .family-sub {
-    font-size: clamp(12px, 1.8vw, 14px);
+    font-size: clamp(11px, 1.6vw, 12.5px);
     color: #68401f;
     font-weight: 600;
-    margin-bottom: 19px;
+    margin-bottom: 11px;
 }
 
 /* Invitation message */
@@ -126,10 +130,10 @@ h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(19px, 2.8vw, 22px);
+    font-size: clamp(14px, 2vw, 16px);
     color: #211710;
-    line-height: 1.35;
-    margin-bottom: 15px;
+    line-height: 1.28;
+    margin-bottom: 10px;
 }
 
 /* Date and time */
@@ -137,85 +141,72 @@ h1.event {
 .details {
     display: flex;
     justify-content: center;
-    gap: 48px;
-    margin-bottom: 20px;
+    gap: 40px;
+    margin-bottom: 11px;
 }
 
 .detail {
-    width: 125px;
+    width: 110px;
 }
 
 .detail .label,
 .venue-block .label {
-    font-size: clamp(12px, 1.7vw, 14px);
-    letter-spacing: 0.1em;
+    font-size: clamp(10px, 1.4vw, 11.5px);
+    letter-spacing: 0.09em;
     color: #9e2418;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .detail .value {
-    font-size: clamp(16px, 2.2vw, 18px);
+    font-size: clamp(12.5px, 1.7vw, 14px);
     color: #17110d;
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 /* Venue and address */
 
-.venue-block {
-    margin-bottom: 19px;
-}
-
 .venue-block .name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(21px, 3.2vw, 25px);
+    font-size: clamp(15px, 2.4vw, 18px);
     font-weight: 700;
     color: #291309;
     line-height: 1.2;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .venue-block .addr {
-    font-size: clamp(15px, 2.1vw, 17px);
+    font-size: clamp(11.5px, 1.6vw, 13px);
     color: #17110d;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.35;
 }
 
 /* Closing invitation */
-
-.rsvp-line {
-    font-size: clamp(15px, 2vw, 17px);
-    color: #211710;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 13px;
-}
 
 .closing {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(21px, 3vw, 24px);
+    font-size: clamp(15px, 2.2vw, 17.5px);
     color: #a52119;
-    margin-bottom: 12px;
 }
 
 /* Hashtags */
 
 .hashtags {
-    font-size: clamp(10px, 1.5vw, 12px);
+    font-size: clamp(9px, 1.3vw, 10.5px);
     color: #51321d;
     font-weight: 600;
-    margin-bottom: 9px;
+    margin-bottom: 5px;
 }
 
 /* Footer */
 
 .footer {
-    font-size: clamp(10px, 1.4vw, 11px);
-    letter-spacing: 0.12em;
+    font-size: clamp(8.5px, 1.2vw, 9.5px);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #382015;
     font-weight: 700;
@@ -225,73 +216,18 @@ h1.event {
 
 @media (max-width: 480px) {
 
-    .text-wrap {
-        top: 29.5%;
-        left: 5%;
-        width: 90%;
-    }
-
-    .eyebrow {
-        font-size: 12px;
-    }
-
-    h1.event {
-        font-size: clamp(28px, 7vw, 35px);
-    }
-
-    .family-name {
-        font-size: clamp(23px, 5.5vw, 27px);
-    }
-
-    .family-sub {
-        font-size: 11px;
-        margin-bottom: 12px;
-    }
-
-    .message {
-        font-size: 16px;
-        margin-bottom: 13px;
-    }
-
-    .details {
-        gap: 18px;
-        margin-bottom: 14px;
-    }
-
-    .detail .label {
-        font-size: 11px;
-    }
-
-    .detail .value {
-        font-size: 14px;
-    }
-
-    .venue-block {
-        margin-bottom: 13px;
-    }
-
-    .venue-block .name {
-        font-size: 18px;
-    }
-
-    .venue-block .addr {
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    .rsvp-line {
-        font-size: 12px;
-        margin-bottom: 10px;
-    }
-
-    .closing {
-        font-size: 18px;
-    }
-
-    .hashtags,
-    .footer {
-        font-size: 9px;
-    }
+    .eyebrow { font-size: 11px; }
+    h1.event { font-size: clamp(24px, 6.2vw, 30px); }
+    .family-name { font-size: clamp(18px, 4.4vw, 21px); }
+    .family-sub { font-size: 10.5px; margin-bottom: 8px; }
+    .message { font-size: 12.5px; margin-bottom: 8px; }
+    .details { gap: 16px; margin-bottom: 8px; }
+    .detail .label { font-size: 9.5px; }
+    .detail .value { font-size: 11.5px; }
+    .venue-block .name { font-size: 14px; }
+    .venue-block .addr { font-size: 10.5px; }
+    .closing { font-size: 13.5px; }
+    .hashtags, .footer { font-size: 8px; }
 }
 
 </style>
@@ -301,34 +237,24 @@ h1.event {
 
 <div class="page">
 
-    <div class="text-wrap">
-
-        <div class="eyebrow">
-            You are cordially invited to a
-        </div>
-
-        <h1 class="event">
-            Housewarming Ceremony
-        </h1>
-
+    <div class="zone zone-a">
+        <div class="eyebrow">You are cordially invited to a</div>
+        <h1 class="event">Housewarming Ceremony</h1>
         <div class="divider">
             <span class="line"></span>
             <span>✧</span>
             <span class="line"></span>
         </div>
+    </div>
 
-        <div class="of">
-            CELEBRATING A NEW BEGINNING AT THE HOME OF
-        </div>
-
+    <div class="zone zone-b">
+        <div class="of">CELEBRATING A NEW BEGINNING AT THE HOME OF</div>
+        <br>
         <div class="family-name">
-            Ganapathy, Parameswary,
+            Ganapathy, Parameswary,<br>
             Hemavilashini &amp; Madhanavilashan
         </div>
-
-        <div class="family-sub">
-            Griha Pravesam · A New Chapter Begins
-        </div>
+        <div class="family-sub">Griha Pravesam · A New Chapter Begins</div>
 
         <p class="message">
             A house is made of bricks and beams,
@@ -338,53 +264,39 @@ h1.event {
         </p>
 
         <div class="details">
-
             <div class="detail">
                 <div class="label">DATE</div>
-                <div class="value">
-                    13 December<br>2026
-                </div>
+                <div class="value">13 December<br>2026</div>
             </div>
-
             <div class="detail">
                 <div class="label">TIME</div>
-                <div class="value">
-                    To Be<br>Announced
-                </div>
+                <div class="value">To Be<br>Announced</div>
             </div>
-
         </div>
 
         <div class="venue-block">
-
             <div class="label">VENUE</div>
-
             <div class="name">
-                No. 20, Jalan Sungai Merbau 32/76C
+                No. 20, Jalan Sungai Merbau 32/76C<br>
                 Kelab Golf &amp; Resort
             </div>
-
             <div class="addr">
                 Bukit Kemuning, Seksyen 32, Shah Alam<br>
                 Selangor, 40460
             </div>
-
         </div>
+    </div>
 
+    <div class="zone zone-c">
         <p class="closing">
             We look forward to celebrating<br>
             this special occasion with you!
         </p>
+    </div>
 
-        <div class="hashtags">
-            #GanapathyGrihaPravesam ·
-            #NewHomeNewBeginnings
-        </div>
-
-        <div class="footer">
-            With Love, The Ganapathy Family
-        </div>
-
+    <div class="zone zone-d">
+        <div class="hashtags">#GanapathyGrihaPravesam &nbsp;·&nbsp; #NewHomeNewBeginnings</div>
+        <div class="footer">With Love, The Ganapathy Family</div>
     </div>
 
 </div>
