@@ -42,30 +42,12 @@ body {
     text-align: center;
 }
 
-/* 1. Title block below Ganesha */
-.zone-a {
-    top: 22.0%;
-}
-
-/* 2. Intro line right ABOVE the first lotus divider */
-.zone-intro {
-    top: 32.0%;
-}
-
-/* 3. Main body BELOW the first lotus divider */
-.zone-b {
-    top: 39.8%;
-}
-
-/* 4. Closing line BELOW the second lotus divider */
-.zone-c {
-    top: 80.1%;
-}
-
-/* 5. Hashtags & footer BELOW the third lotus divider */
-.zone-d {
-    top: 87.0%;
-}
+/* Zone positions aligned between artwork dividers */
+.zone-a { top: 22.0%; }
+.zone-intro { top: 32.0%; }
+.zone-b { top: 39.8%; }
+.zone-c { top: 80.1%; }
+.zone-d { top: 87.0%; }
 
 /* Introductory text */
 .eyebrow {
@@ -87,7 +69,7 @@ h1.event {
     text-shadow: 0 1px 0 rgba(255,255,255,0.7);
 }
 
-/* Thin divider under title */
+/* Divider under title */
 .divider {
     display: flex;
     align-items: center;
@@ -140,69 +122,88 @@ h1.event {
     font-size: clamp(14px, 2.05vw, 17px);
     color: #211710;
     line-height: 1.32;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     padding: 0 8px;
 }
 
-/* Vertical Icon Info List (Date, Time, Venue) */
-.info-list {
+/* Side-by-side Date and Time layout with icons */
+.details {
     display: flex;
-    flex-direction: column;
-    gap: clamp(10px, 1.6vw, 14px);
-    width: fit-content;
-    max-width: 88%;
-    margin: 0 auto;
-    text-align: left;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 14px;
 }
 
-.info-row {
+.detail {
     display: flex;
     align-items: flex-start;
-    gap: clamp(12px, 2vw, 18px);
+    gap: 10px;
+    text-align: left;
 }
 
 .icon-circle {
     flex-shrink: 0;
-    width: clamp(34px, 5.2vw, 44px);
-    height: clamp(34px, 5.2vw, 44px);
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: #edd2a8;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 .icon-circle svg {
-    width: 54%;
-    height: 54%;
+    width: 52%;
+    height: 52%;
     color: #8b1e16;
 }
 
-.info-text .label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(11.5px, 1.7vw, 14px);
-    letter-spacing: 0.08em;
+.detail .label,
+.venue-block .label {
+    font-size: clamp(10px, 1.4vw, 11.5px);
+    letter-spacing: 0.1em;
     color: #8b1e16;
     font-weight: 700;
-    line-height: 1.1;
     margin-bottom: 2px;
 }
 
-.info-text .value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(15px, 2.3vw, 19px);
-    color: #8b1e16;
+.detail .value {
+    font-size: clamp(12.5px, 1.7vw, 14px);
+    color: #17110d;
     font-weight: 700;
-    line-height: 1.22;
+    line-height: 1.25;
 }
 
-.info-text .sub-value {
+/* Venue and address block with icon */
+.venue-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: fit-content;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.venue-block .venue-content {
+    flex-grow: 1;
+}
+
+.venue-block .name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(12.5px, 1.85vw, 15.5px);
-    color: #8b1e16;
+    font-size: clamp(14.5px, 2.2vw, 17.5px);
     font-weight: 700;
-    line-height: 1.2;
+    color: #291309;
+    line-height: 1.25;
+    margin-bottom: 2px;
+}
+
+.venue-block .addr {
+    font-size: clamp(11.5px, 1.6vw, 13px);
+    color: #17110d;
+    font-weight: 700;
+    line-height: 1.35;
 }
 
 /* Closing invitation */
@@ -233,9 +234,7 @@ h1.event {
 }
 
 @media (max-width: 480px) {
-    .family-sub { margin-bottom: 8px; }
-    .message { margin-bottom: 10px; line-height: 1.25; }
-    .info-list { gap: 8px; }
+    .details { gap: 16px; }
 }
 
 </style>
@@ -245,7 +244,7 @@ h1.event {
 
 <div class="page">
 
-    <!-- Zone A: Title Header below Ganesha -->
+    <!-- Zone A: Title Header -->
     <div class="zone zone-a">
         <div class="eyebrow">You are cordially invited to a</div>
         <h1 class="event">Housewarming Ceremony</h1>
@@ -256,12 +255,12 @@ h1.event {
         </div>
     </div>
 
-    <!-- Zone Intro: Sits right above the first lotus divider -->
+    <!-- Zone Intro -->
     <div class="zone zone-intro">
         <div class="of">CELEBRATING A NEW BEGINNING AT THE HOME OF</div>
     </div>
 
-    <!-- Zone B: Sits below the first lotus divider -->
+    <!-- Zone B: Main Content -->
     <div class="zone zone-b">
         <div class="family-name">
             Ganapathy, Parameswary,<br>
@@ -275,58 +274,55 @@ h1.event {
             our new beginning.
         </p>
 
-        <!-- Vertical Details with Inline SVG Icons -->
-        <div class="info-list">
-
-            <!-- DATE -->
-            <div class="info-row">
+        <!-- Side-by-Side Date & Time with Icons -->
+        <div class="details">
+            <div class="detail">
                 <div class="icon-circle">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h3v3H7v-3zm4 0h3v3h-3v-3zm4 0h3v3h-3v-3zm-8 4h3v3H7v-3zm4 0h3v3h-3v-3z"/>
                     </svg>
                 </div>
-                <div class="info-text">
+                <div>
                     <div class="label">DATE</div>
-                    <div class="value">13 DECEMBER 2026</div>
-                    <div class="sub-value">(SUNDAY)</div>
+                    <div class="value">13 December<br>2026</div>
                 </div>
             </div>
 
-            <!-- TIME -->
-            <div class="info-row">
+            <div class="detail">
                 <div class="icon-circle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="9"/>
                         <polyline points="12 7 12 12 15.5 14"/>
                     </svg>
                 </div>
-                <div class="info-text">
+                <div>
                     <div class="label">TIME</div>
-                    <div class="value">9 a.m. - 11 a.m.</div>
+                    <div class="value">To Be<br>Announced</div>
                 </div>
             </div>
+        </div>
 
-            <!-- VENUE -->
-            <div class="info-row">
-                <div class="icon-circle">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
-                    </svg>
+        <!-- Venue with Icon -->
+        <div class="venue-block">
+            <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                </svg>
+            </div>
+            <div class="venue-content">
+                <div class="label">VENUE</div>
+                <div class="name">
+                    No. 20, Jalan Sungai Merbau 32/76C Kelab Golf &amp; Resort
                 </div>
-                <div class="info-text">
-                    <div class="label">VENUE</div>
-                    <div class="value">
-                        No. 20, Jalan Sungai Merbau 32/76C,<br>
-                        Kelab Golf &amp; Resort, Bukit Kemuning,<br>
-                        Seksyen 32, 40460 Shah Alam, Selangor.
-                    </div>
+                <div class="addr">
+                    Bukit Kemuning, Seksyen 32, Shah Alam<br>
+                    Selangor, 40460
                 </div>
             </div>
-
         </div>
     </div>
 
-    <!-- Zone C: Sits below the second lotus divider -->
+    <!-- Zone C: Closing -->
     <div class="zone zone-c">
         <p class="closing">
             We look forward to celebrating<br>
@@ -334,7 +330,7 @@ h1.event {
         </p>
     </div>
 
-    <!-- Zone D: Sits below the third lotus divider -->
+    <!-- Zone D: Hashtags & Footer -->
     <div class="zone zone-d">
         <div class="hashtags">#GanapathyGrihaPravesam #NewHomeNewBeginnings</div>
         <div class="footer">With Love, The Ganapathy Family</div>
