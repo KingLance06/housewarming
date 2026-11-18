@@ -57,10 +57,12 @@ body {
     top: 40.2%;
 }
 
+/* Gift message - moved slightly upwards */
 .zone-c {
-    top: 80.1%;
+    top: 78%;
 }
 
+/* Closing message */
 .zone-d {
     top: 87%;
 }
@@ -144,7 +146,7 @@ h1.event {
     font-size: clamp(15px, 2.25vw, 18.5px);
     color: #211710;
     line-height: 1.38;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     padding: 0 6px;
 }
 
@@ -155,8 +157,8 @@ h1.event {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-bottom: 18px;
-    padding-bottom: 16px;
+    margin-bottom: 11px;
+    padding-bottom: 12px;
     border-bottom: 1px solid rgba(140, 109, 63, 0.35);
     width: 90%;
     margin-left: auto;
@@ -185,24 +187,33 @@ h1.event {
     white-space: nowrap;
 }
 
-/* VENUE NAME - ORIGINAL STYLING */
+/* VENUE */
 
-.venue-block .name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(16.5px, 2.6vw, 21px);
-    font-weight: 700;
-    color: #291309;
-    line-height: 1.25;
+.venue-block {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.venue-block .label {
     margin-bottom: 5px;
 }
 
-/* VENUE ADDRESS - ORIGINAL STYLING */
+/* BOTH VENUE NAME AND ADDRESS
+   SAME FONT, SIZE, COLOUR AND WEIGHT */
 
+.venue-block .name,
 .venue-block .addr {
+    font-family: 'Work Sans', sans-serif;
     font-size: clamp(12.5px, 1.85vw, 15px);
-    color: #17110d;
     font-weight: 700;
+    color: #17110d;
     line-height: 1.4;
+}
+
+/* TIGHTER GAP BETWEEN VENUE LINES */
+
+.venue-block .name {
+    margin-bottom: 2px;
 }
 
 /* GIFT MESSAGE */
@@ -212,14 +223,14 @@ h1.event {
     font-size: clamp(12.5px, 1.85vw, 15px);
     font-weight: 700;
     color: #17110d;
-    line-height: 1.5;
+    line-height: 1.4;
     text-align: center;
     padding: 0 4px;
 }
 
 .gift-heading {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .gift-details {
@@ -244,7 +255,7 @@ h1.event {
     .details {
         gap: 12px;
         width: 96%;
-        margin-bottom: 12px;
+        margin-bottom: 9px;
         padding-bottom: 10px;
     }
 
@@ -257,11 +268,13 @@ h1.event {
     }
 
     .message {
-        margin-bottom: 13px;
+        margin-bottom: 12px;
     }
 
+    .venue-block .name,
     .venue-block .addr {
-        font-size: 12.5px;
+        font-size: 12px;
+        line-height: 1.4;
     }
 
     .gift-message {
@@ -332,28 +345,36 @@ h1.event {
 
             <div class="detail">
                 <div class="label">DATE</div>
-                <div class="value">13 December 2026</div>
+                <div class="value">
+                    13 December 2026
+                </div>
             </div>
 
             <div class="detail">
                 <div class="label">TIME</div>
-                <div class="value">9:30 AM – 12:00 PM</div>
+                <div class="value">
+                    9:30 AM – 12:00 PM
+                </div>
             </div>
 
         </div>
 
-        <!-- VENUE - TWO LINES -->
+        <!-- VENUE: TWO LINES FOR NAME AND TWO FOR ADDRESS -->
 
         <div class="venue-block">
 
-            <div class="label">VENUE</div>
+            <div class="label">
+                VENUE
+            </div>
 
             <div class="name">
-                No. 20, Jalan Sungai Merbau 32/76C Kelab Golf &amp; Resort
+                No. 20, Jalan Sungai Merbau 32/76C<br>
+                Kelab Golf &amp; Resort
             </div>
 
             <div class="addr">
-                Bukit Kemuning, Seksyen 32, Shah Alam, Selangor, 40460
+                Bukit Kemuning, Seksyen 32, Shah Alam<br>
+                Selangor, 40460
             </div>
 
         </div>
