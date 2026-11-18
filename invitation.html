@@ -43,32 +43,30 @@ body {
     text-align: center;
 }
 
-/* 1. Title block below Ganesha */
+/* POSITIONING */
+
 .zone-a {
-    top: 22.0%;
+    top: 22%;
 }
 
-/* 2. Intro line above first lotus divider */
 .zone-intro {
-    top: 32.0%;
+    top: 32%;
 }
 
-/* 3. Main body below first lotus divider */
 .zone-b {
     top: 40.2%;
 }
 
-/* 4. Gift message below second lotus divider */
 .zone-c {
     top: 80.1%;
 }
 
-/* 5. Closing message below third lotus divider */
 .zone-d {
-    top: 87.0%;
+    top: 87%;
 }
 
-/* Introductory text */
+/* INTRODUCTORY TEXT */
+
 .eyebrow {
     font-size: clamp(13px, 2vw, 17px);
     font-weight: 600;
@@ -77,7 +75,8 @@ body {
     margin-bottom: 3px;
 }
 
-/* Main heading */
+/* MAIN HEADING */
+
 h1.event {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
@@ -88,7 +87,8 @@ h1.event {
     text-shadow: 0 1px 0 rgba(255,255,255,0.7);
 }
 
-/* Thin divider under title */
+/* TITLE DIVIDER */
+
 .divider {
     display: flex;
     align-items: center;
@@ -107,7 +107,8 @@ h1.event {
     font-size: 12px;
 }
 
-/* Family introduction */
+/* FAMILY INTRODUCTION */
+
 .of {
     font-size: clamp(10.5px, 1.6vw, 13px);
     color: #2b180e;
@@ -115,7 +116,8 @@ h1.event {
     letter-spacing: 0.06em;
 }
 
-/* Family names */
+/* FAMILY NAMES */
+
 .family-name {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
@@ -133,7 +135,8 @@ h1.event {
     margin-bottom: 18px;
 }
 
-/* Invitation message */
+/* INVITATION MESSAGE */
+
 .message {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -145,7 +148,8 @@ h1.event {
     padding: 0 6px;
 }
 
-/* Date and time */
+/* DATE AND TIME */
+
 .details {
     display: flex;
     justify-content: center;
@@ -181,7 +185,8 @@ h1.event {
     white-space: nowrap;
 }
 
-/* Venue name - ORIGINAL DESIGN */
+/* VENUE NAME - ORIGINAL STYLING */
+
 .venue-block .name {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(16.5px, 2.6vw, 21px);
@@ -191,7 +196,8 @@ h1.event {
     margin-bottom: 5px;
 }
 
-/* Venue address - ORIGINAL DESIGN */
+/* VENUE ADDRESS - ORIGINAL STYLING */
+
 .venue-block .addr {
     font-size: clamp(12.5px, 1.85vw, 15px);
     color: #17110d;
@@ -199,7 +205,8 @@ h1.event {
     line-height: 1.4;
 }
 
-/* Gift message - same font style as address */
+/* GIFT MESSAGE */
+
 .gift-message {
     font-family: 'Work Sans', sans-serif;
     font-size: clamp(12.5px, 1.85vw, 15px);
@@ -207,6 +214,7 @@ h1.event {
     color: #17110d;
     line-height: 1.5;
     text-align: center;
+    padding: 0 4px;
 }
 
 .gift-heading {
@@ -218,7 +226,8 @@ h1.event {
     display: block;
 }
 
-/* Original closing invitation style */
+/* ORIGINAL CLOSING MESSAGE */
+
 .closing {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -228,7 +237,8 @@ h1.event {
     line-height: 1.24;
 }
 
-/* Responsive */
+/* MOBILE RESPONSIVE */
+
 @media (max-width: 480px) {
 
     .details {
@@ -248,6 +258,10 @@ h1.event {
 
     .message {
         margin-bottom: 13px;
+    }
+
+    .venue-block .addr {
+        font-size: 12.5px;
     }
 
     .gift-message {
@@ -328,22 +342,18 @@ h1.event {
 
         </div>
 
-        <!-- VENUE -->
+        <!-- VENUE - TWO LINES -->
 
         <div class="venue-block">
 
-            <div class="label">
-                VENUE
-            </div>
+            <div class="label">VENUE</div>
 
             <div class="name">
-                No. 20, Jalan Sungai Merbau 32/76C<br>
-                Kelab Golf &amp; Resort
+                No. 20, Jalan Sungai Merbau 32/76C Kelab Golf &amp; Resort
             </div>
 
             <div class="addr">
-                Bukit Kemuning, Seksyen 32, Shah Alam<br>
-                Selangor, 40460
+                Bukit Kemuning, Seksyen 32, Shah Alam, Selangor, 40460
             </div>
 
         </div>
@@ -351,7 +361,6 @@ h1.event {
     </div>
 
     <!-- ZONE C: GIFT MESSAGE -->
-    <!-- Replaces the original We look forward message -->
 
     <div class="zone zone-c">
 
@@ -369,8 +378,7 @@ h1.event {
 
     </div>
 
-    <!-- ZONE D: ORIGINAL CLOSING MESSAGE -->
-    <!-- Replaces the original hashtag position -->
+    <!-- ZONE D: CLOSING MESSAGE -->
 
     <div class="zone zone-d">
 
