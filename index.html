@@ -1,358 +1,396 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Directions — Ganapathy Housewarming</title>
+
+<title>Housewarming Ceremony | Ganapathy Family</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --indigo:#1B2A44;
-    --brass:#C9A15A;
-    --brass-light:#E4C88A;
-    --terracotta:#B5533C;
-    --ivory:#F4ECDC;
-    --ivory-dim:#E9DEC6;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    background: linear-gradient(180deg, #2A1B32 0%, #5A2A3D 28%, #9C4A3C 55%, #D68A42 82%, #E8A94F 100%);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:40px 16px;
-    font-family:'Work Sans', sans-serif;
-    position:relative;
-    overflow-x:hidden;
-  }
-  .card{
-    width:100%;
-    max-width:440px;
-    background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-dim) 100%);
-    border-radius:28px;
-    padding:44px 32px 38px;
-    box-shadow: 0 30px 70px rgba(0,0,0,0.55);
-    border:1px solid rgba(201,161,90,0.4);
-    text-align:center;
-  }
-  .pin{
-    width:52px;height:52px;
-    margin:0 auto 18px;
-    display:flex;align-items:center;justify-content:center;
-    border-radius:50%;
-    background:var(--indigo);
-  }
-  .pin svg{width:26px;height:26px;}
-  .eyebrow{
-    font-size:12.5px;
-    letter-spacing:0.12em;
-    color:var(--terracotta);
-    font-weight:600;
-    text-transform:uppercase;
-    margin-bottom:8px;
-  }
-  h1{
-    font-family:'Cormorant Garamond', serif;
-    font-weight:700;
-    font-size:32px;
-    color:var(--indigo);
-    margin-bottom:20px;
-    line-height:1.2;
-  }
-  .venue-name{
-    font-family:'Cormorant Garamond', serif;
-    font-size:19px;
-    font-weight:600;
-    color:var(--indigo);
-    margin-bottom:6px;
-  }
-  .venue-addr{
-    font-size:13.5px;
-    color:var(--indigo);
-    opacity:0.75;
-    line-height:1.6;
-    margin-bottom:28px;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    width:100%;
-    padding:15px 20px;
-    background: var(--terracotta);
-    color:#fff;
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:0.02em;
-    box-shadow: 0 8px 20px rgba(181,83,60,0.35);
-    transition: transform 0.15s ease;
-    margin-bottom:12px;
-  }
-  .btn:active{ transform: scale(0.98); }
-  .btn svg{ width:18px;height:18px; }
-  .btn-secondary{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    width:100%;
-    padding:13px 20px;
-    background: transparent;
-    color:var(--indigo);
-    border:1.4px solid var(--brass);
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:500;
-    font-size:14px;
-    cursor:pointer;
-    font-family:inherit;
-  }
-  .divider{
-    display:flex;align-items:center;gap:10px;
-    margin: 22px 0 16px;
-  }
-  .divider .line{ height:1px; flex:1; background:var(--brass); opacity:0.5; }
-  .divider span{ font-size:11px; letter-spacing:0.1em; color:var(--indigo); opacity:0.6; }
-  .footer{
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--indigo);
-    opacity:0.55;
-    margin-top:6px;
-  }
-  .toast{
-    margin-top:10px;
-    font-size:12px;
-    color:var(--terracotta);
-    opacity:0;
-    transition:opacity 0.25s ease;
-    min-height:16px;
-  }
-  .toast.show{ opacity:1; }
 
-  .bg-particles{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-    z-index:0;
-  }
-  .card{ position:relative; z-index:1; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-  .particle{
-    position:absolute;
-    bottom:-40px;
-    left:var(--x);
-    opacity:0;
-    animation: floatUp var(--dur) linear var(--delay) infinite;
-  }
-  .particle.petal{
-    width:var(--size);
-    height:calc(var(--size) * 0.7);
-    background: linear-gradient(135deg, #E9A24B, #C9663B);
-    border-radius: 60% 40% 60% 40%;
-    box-shadow: 0 0 6px rgba(233,162,75,0.4);
-  }
-  .particle.spark{
-    width:var(--size);
-    height:var(--size);
-    border-radius:50%;
-    background: radial-gradient(circle, #F4D999 0%, rgba(244,217,153,0) 70%);
-  }
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: #f8eee8;
+}
 
-  @keyframes floatUp{
-    0%{
-      transform: translate(0, 0) rotate(0deg);
-      opacity:0;
+.page {
+    position: relative;
+    width: 100%;
+    max-width: 734px;
+    aspect-ratio: 842 / 1264;
+    margin: auto;
+    background-image: url('template-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.zone {
+    position: absolute;
+    left: 9%;
+    width: 82%;
+    text-align: center;
+}
+
+/* POSITIONING */
+
+.zone-a {
+    top: 22%;
+}
+
+.zone-intro {
+    top: 32%;
+}
+
+.zone-b {
+    top: 40.2%;
+}
+
+/* New gift message position */
+.zone-c {
+    top: 79%;
+}
+
+/* INTRODUCTORY TEXT */
+
+.eyebrow {
+    font-size: clamp(13px, 2vw, 17px);
+    font-weight: 600;
+    color: #382015;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+}
+
+/* MAIN HEADING */
+
+h1.event {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: #8b1e16;
+    font-size: clamp(31px, 5.4vw, 44px);
+    line-height: 1.05;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* DIVIDER */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.divider .line {
+    height: 1px;
+    width: 38px;
+    background: #8c6d3f;
+}
+
+.divider span {
+    color: #8b1e16;
+    font-size: 12px;
+}
+
+/* FAMILY INTRODUCTION */
+
+.of {
+    font-size: clamp(10.5px, 1.6vw, 13px);
+    color: #2b180e;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+/* FAMILY NAMES */
+
+.family-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: #291309;
+    font-size: clamp(23px, 4vw, 31px);
+    line-height: 1.2;
+    margin-bottom: 7px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.65);
+}
+
+.family-sub {
+    font-size: clamp(12px, 1.85vw, 15px);
+    color: #4a2c16;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* INVITATION MESSAGE */
+
+.message {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(16px, 2.35vw, 19px);
+    color: #211710;
+    line-height: 1.45;
+    margin-bottom: 20px;
+    padding: 0 6px;
+}
+
+/* DATE AND TIME */
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(140, 109, 63, 0.35);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail {
+    flex: 1;
+    min-width: 0;
+}
+
+.detail .label,
+.venue-block .label {
+    font-size: clamp(12px, 1.7vw, 14px);
+    letter-spacing: 0.1em;
+    color: #8b1e16;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.detail .value {
+    font-size: clamp(13px, 2vw, 17px);
+    color: #17110d;
+    font-weight: 700;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+/* VENUE */
+
+.venue-block {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.venue-block .label {
+    margin-bottom: 7px;
+}
+
+/* VENUE NAME */
+
+.venue-block .name {
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(14px, 2.2vw, 17px);
+    font-weight: 700;
+    color: #17110d;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+/* ADDRESS */
+
+.venue-block .addr {
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(14px, 2.2vw, 17px);
+    color: #17110d;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* NEW GIFT MESSAGE */
+
+.gift-message {
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: 700;
+    color: #17110d;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 4px;
+}
+
+/* FIRST SENTENCE */
+
+.gift-message .gift-heading {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* SECOND SENTENCE */
+
+.gift-message .gift-details {
+    display: block;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 480px) {
+
+    .details {
+        gap: 12px;
+        width: 96%;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
     }
-    8%{ opacity:0.85; }
-    50%{
-      transform: translate(var(--drift), -55vh) rotate(180deg);
+
+    .detail .value {
+        font-size: 12px;
     }
-    92%{ opacity:0.7; }
-    100%{
-      transform: translate(calc(var(--drift) * 1.6), -115vh) rotate(360deg);
-      opacity:0;
+
+    .family-sub {
+        margin-bottom: 12px;
     }
-  }
 
-  @media (prefers-reduced-motion: reduce){
-    .particle{ animation: none; display:none; }
-  }
+    .message {
+        margin-bottom: 13px;
+    }
 
-  .sky-glow{
-    position:fixed;
-    top:6%;
-    left:50%;
-    transform:translateX(-50%);
-    width:220px;height:220px;
-    border-radius:50%;
-    background: radial-gradient(circle, rgba(255,224,170,0.55) 0%, rgba(255,224,170,0) 70%);
-    z-index:0;
-    pointer-events:none;
-  }
+    .venue-block .name,
+    .venue-block .addr {
+        font-size: 13px;
+        line-height: 1.45;
+    }
 
-  .skyline{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    z-index:0;
-    pointer-events:none;
-    opacity:0.92;
-  }
+    .gift-message {
+        font-size: 11.5px;
+        line-height: 1.45;
+    }
+}
+
 </style>
 </head>
+
 <body>
-  <div class="sky-glow"></div>
-  <div class="bg-particles" id="bgParticles"></div>
 
-  <svg class="skyline" viewBox="0 0 400 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="60" width="60" height="70" fill="#2A1B32"/>
-    <polygon points="0,60 30,35 60,60" fill="#2A1B32"/>
-    <rect x="14" y="78" width="12" height="14" fill="#F4D999" opacity="0.8"/>
-    <rect x="38" y="78" width="12" height="14" fill="#F4D999" opacity="0.5"/>
+<div class="page">
 
-    <rect x="55" y="80" width="50" height="50" fill="#331F30"/>
-    <polygon points="55,80 80,58 105,80" fill="#331F30"/>
-    <rect x="66" y="98" width="10" height="12" fill="#F4D999" opacity="0.7"/>
-    <rect x="86" y="98" width="10" height="12" fill="#F4D999" opacity="0.4"/>
+    <!-- ZONE A: TITLE -->
 
-    <rect x="100" y="55" width="55" height="75" fill="#2A1B32"/>
-    <polygon points="100,55 127.5,28 155,55" fill="#2A1B32"/>
-    <rect x="112" y="75" width="11" height="13" fill="#F4D999" opacity="0.85"/>
-    <rect x="133" y="75" width="11" height="13" fill="#F4D999" opacity="0.5"/>
-    <rect x="112" y="98" width="11" height="13" fill="#F4D999" opacity="0.5"/>
-    <rect x="133" y="98" width="11" height="13" fill="#F4D999" opacity="0.8"/>
+    <div class="zone zone-a">
 
-    <rect x="150" y="85" width="48" height="45" fill="#331F30"/>
-    <polygon points="150,85 174,64 198,85" fill="#331F30"/>
-    <rect x="160" y="102" width="10" height="12" fill="#F4D999" opacity="0.6"/>
-    <rect x="180" y="102" width="10" height="12" fill="#F4D999" opacity="0.85"/>
+        <div class="eyebrow">
+            You are cordially invited to a
+        </div>
 
-    <rect x="193" y="50" width="60" height="80" fill="#2A1B32"/>
-    <polygon points="193,50 223,22 253,50" fill="#2A1B32"/>
-    <rect x="205" y="70" width="12" height="14" fill="#F4D999" opacity="0.75"/>
-    <rect x="228" y="70" width="12" height="14" fill="#F4D999" opacity="0.5"/>
-    <rect x="205" y="95" width="12" height="14" fill="#F4D999" opacity="0.5"/>
-    <rect x="228" y="95" width="12" height="14" fill="#F4D999" opacity="0.85"/>
+        <h1 class="event">
+            Housewarming Ceremony
+        </h1>
 
-    <rect x="248" y="82" width="50" height="48" fill="#331F30"/>
-    <polygon points="248,82 273,60 298,82" fill="#331F30"/>
-    <rect x="259" y="100" width="10" height="12" fill="#F4D999" opacity="0.5"/>
-    <rect x="279" y="100" width="10" height="12" fill="#F4D999" opacity="0.8"/>
+        <div class="divider">
+            <span class="line"></span>
+            <span>✧</span>
+            <span class="line"></span>
+        </div>
 
-    <rect x="293" y="58" width="55" height="72" fill="#2A1B32"/>
-    <polygon points="293,58 320.5,32 348,58" fill="#2A1B32"/>
-    <rect x="304" y="78" width="11" height="13" fill="#F4D999" opacity="0.8"/>
-    <rect x="325" y="78" width="11" height="13" fill="#F4D999" opacity="0.45"/>
-    <rect x="304" y="100" width="11" height="13" fill="#F4D999" opacity="0.45"/>
-    <rect x="325" y="100" width="11" height="13" fill="#F4D999" opacity="0.8"/>
-
-    <rect x="343" y="86" width="57" height="44" fill="#331F30"/>
-    <polygon points="343,86 371.5,63 400,86" fill="#331F30"/>
-    <rect x="354" y="103" width="10" height="12" fill="#F4D999" opacity="0.7"/>
-    <rect x="378" y="103" width="10" height="12" fill="#F4D999" opacity="0.5"/>
-  </svg>
-
-  <!--
-    BACKGROUND MUSIC:
-    Upload your own mp3 to this same GitHub repo (e.g. music.mp3) and it will
-    play automatically, looping, just like sagiless02.github.io/Navigation/ does.
-    Autoplay-with-sound is blocked by phones until the visitor taps the screen
-    once, so it starts silently on the very first tap/scroll — no icon needed.
-  -->
-  <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
-
-  <div class="card" id="card">
-    <div class="pin">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.36 15.64 2 12 2C8.36 2 5 5.36 5 9.5C5 14.6 12 21 12 21Z" stroke="#E4C88A" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.6" stroke="#E4C88A" stroke-width="1.5"/></svg>
     </div>
-    <div class="eyebrow">Find your way to</div>
-    <h1>Our New Home</h1>
 
-    <div class="venue-name">No. 20, Jalan Sungai Merbau 32/76C</div>
-    <div class="venue-addr">Kelab Golf &amp; Resort Bukit Kemuning<br>Seksyen 32, Shah Alam<br>40460, Selangor, Malaysia</div>
+    <!-- ZONE INTRO -->
 
-    <a class="btn" id="directionsBtn" href="https://www.google.com/maps/search/?api=1&query=2.979861,101.529667" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      Get Directions
-    </a>
-    <button class="btn-secondary" onclick="copyAddress()">Copy Address</button>
-    <div class="toast" id="toast">Address copied</div>
+    <div class="zone zone-intro">
 
-    <div class="divider"><span class="line"></span><span>Housewarming Celebration</span><span class="line"></span></div>
-    <div class="footer">Ganapathy, Parameswary, Hemavilashini &amp; Madhanavilashan</div>
-  </div>
+        <div class="of">
+            CELEBRATING A NEW BEGINNING AT THE HOME OF
+        </div>
 
-  <script>
-    // Gently rising marigold petals + warm light sparks in the background
-    (function(){
-      const container = document.getElementById('bgParticles');
-      const total = 22;
-      for (let i = 0; i < total; i++){
-        const el = document.createElement('div');
-        const isPetal = Math.random() > 0.4;
-        el.className = 'particle ' + (isPetal ? 'petal' : 'spark');
-        const size = isPetal ? (10 + Math.random() * 10) : (3 + Math.random() * 5);
-        el.style.setProperty('--size', size + 'px');
-        el.style.setProperty('--x', Math.random() * 100 + 'vw');
-        el.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
-        el.style.setProperty('--dur', (10 + Math.random() * 10) + 's');
-        el.style.setProperty('--delay', (Math.random() * -20) + 's');
-        container.appendChild(el);
-      }
-    })();
+    </div>
 
-    // Start the background music on the visitor's first tap/scroll —
-    // phones block audio with sound from autoplaying until there's a gesture.
-    // IMPORTANT: keep retrying on every tap until play() actually succeeds —
-    // a single failed attempt should not give up permanently.
-    (function(){
-      const music = document.getElementById('bgMusic');
-      let playing = false;
+    <!-- ZONE B: MAIN INVITATION -->
 
-      function attemptPlay(){
-        if (playing) return;
-        music.muted = false;
-        music.volume = 1;
-        const p = music.play();
-        if (p && typeof p.then === 'function'){
-          p.then(() => {
-            playing = true;
-          }).catch(() => {
-            // failed silently — leave listeners active so the next tap retries
-          });
-        } else {
-          playing = true;
-        }
-      }
+    <div class="zone zone-b">
 
-      ['click', 'touchend', 'touchstart', 'scroll', 'pointerdown'].forEach(evt => {
-        document.addEventListener(evt, attemptPlay, { passive: true });
-      });
+        <div class="family-name">
+            Ganapathy, Parameswary,<br>
+            Hemavilashini &amp; Madhanavilashan
+        </div>
 
-      // Try immediately too, in case the browser allows it outright
-      window.addEventListener('DOMContentLoaded', attemptPlay);
+        <div class="family-sub">
+            Grahapravesam · A New Chapter Begins
+        </div>
 
-      // Once actually playing, stop re-attempting
-      music.addEventListener('playing', () => { playing = true; });
-    })();
+        <p class="message">
+            A house is made of bricks and beams, but a home is built with love,
+            blessings and cherished memories. We invite you to share in the joy of
+            our new beginning.
+        </p>
 
-    function copyAddress(){
-      const addr = "No. 20, Jalan Sungai Merbau 32/76C, Kelab Golf & Resort Bukit Kemuning, Seksyen 32, Shah Alam, 40460 Selangor, Malaysia";
-      navigator.clipboard.writeText(addr).then(() => {
-        const t = document.getElementById('toast');
-        t.classList.add('show');
-        setTimeout(() => t.classList.remove('show'), 1800);
-      });
-    }
-  </script>
+        <!-- DATE AND TIME -->
+
+        <div class="details">
+
+            <div class="detail">
+                <div class="label">DATE</div>
+                <div class="value">
+                    13 December 2026
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="label">TIME</div>
+                <div class="value">
+                    9:30 AM – 12:00 PM
+                </div>
+            </div>
+
+        </div>
+
+        <!-- VENUE AND ADDRESS -->
+
+        <div class="venue-block">
+
+            <div class="label">
+                VENUE
+            </div>
+
+            <div class="name">
+                No. 20, Jalan Sungai Merbau 32/76C<br>
+                Kelab Golf &amp; Resort
+            </div>
+
+            <div class="addr">
+                Bukit Kemuning, Seksyen 32, Shah Alam<br>
+                Selangor, 40460
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ZONE C: GIFT MESSAGE -->
+
+    <div class="zone zone-c">
+
+        <div class="gift-message">
+
+            <span class="gift-heading">
+                Your presence is gift enough! No boxed gifts!
+            </span>
+
+            <span class="gift-details">
+                If you still wish to bless us, a monetary gift is warmly welcomed.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
